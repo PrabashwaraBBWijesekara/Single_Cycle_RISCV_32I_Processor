@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 09/28/2023 10:02:40 PM
+// Create Date: 10/02/2023 02:15:34 PM
 // Design Name: 
-// Module Name: adder_4
+// Module Name: mux_5
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,12 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module adder_4 #
-   ( parameter SIZE = 8) 
-   (
-    input logic [SIZE-1:0] in_1,in_2,
-    output logic [SIZE-1:0] out
-);
 
-  assign out = in_1 + in_2;  
+module mux#
+(parameter DATA_WIDTH=32)(
+  input logic [DATA_WIDTH:0] in_1,in_2,
+  input logic sel,
+  output logic out
+    );
+  assign out = sel ? in_1 : in_2;
 endmodule
